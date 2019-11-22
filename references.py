@@ -53,7 +53,7 @@ def extract_publication_info(ref_str):
     return pub_info
 
 
-def get_info_from_title(title, publication="IEEE"):
+def download_info_from_title(title, publication="IEEE"):
     """
     Go to the Internet and get the publication info for 
     the given title. @publication defines the website to
@@ -107,7 +107,6 @@ def get_info_from_title(title, publication="IEEE"):
         raise ValueError('only IEEE implemented')
 
 
-
 # # NOTE: Doesn't always work! Sometimes need to run 3-5 times before output
 # _URL = 'https://ieeexplore.ieee.org/document/7560203/references#references'
 # session = HTMLSession()
@@ -131,9 +130,7 @@ for ref in refs:
 
 for ref in ref_set:
     print(ref)
-    authors, s = extract_authors(ref)
-    title = extract_title(s, remaining=True)
-    # print('Title:', title)
+    # info = extract_publication_info(ref)
     
 
 
